@@ -21,7 +21,7 @@ class LightKeeper:
         self.lights.append(SecondProgressLight(self.NUMBER_OF_LIGHTS))
 
     def update(self, progress):
-        self.rgb_array = zeros((self.NUMBER_OF_LIGHTS + 1) * 4, 'B')
+        self.rgb_array = zeros((self.NUMBER_OF_LIGHTS + 1) * 3, 'B')
 
         for light in self.lights:
             light.update(progress)
@@ -31,7 +31,7 @@ class LightKeeper:
         self.set_buffer()
 
     def set_rgb_values(self, position, rgb_tuple):
-        offset = position * 4
+        offset = position * 3
         self.rgb_array[offset + 1] += rgb_tuple[0]
         self.rgb_array[offset + 2] += rgb_tuple[1]
         self.rgb_array[offset + 3] += rgb_tuple[2]
