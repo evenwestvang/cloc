@@ -25,7 +25,7 @@ class LightKeeper:
         self.lights.append(SecondProgressLight(self.NUMBER_OF_LIGHTS))
 
     def calculate_gamma(self):
-        self.gamma_correction = bytearray(256)
+        self.gamma = bytearray(256)
         for i in range(256):
             self.gamma[i] = int(pow(float(i) / 255.0, 2.5) * 255.0)
 
