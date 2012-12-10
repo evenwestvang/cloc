@@ -38,7 +38,7 @@ class MainProgressLight(LightSource):
 
     def update(self, progress):
         self.position = progress
-        self.color = hls_to_rgb(progress, 0.7, 0.8)
+        self.color = hls_to_rgb(progress, 0.3, 0.8)
 
 
 class MinuteProgressLight(LightSource):
@@ -50,7 +50,7 @@ class MinuteProgressLight(LightSource):
     def update(self, progress):
         local_progress = (progress * self.number_of_lights) % 1
         self.position = local_progress
-        self.color = hls_to_rgb(local_progress, 0.7, 0.8)
+        self.color = hls_to_rgb(local_progress, 0.3, 0.8)
 
 
 class SecondProgressLight(LightSource):
@@ -62,4 +62,4 @@ class SecondProgressLight(LightSource):
     def update(self, progress):
         local_progress = (progress * self.number_of_lights * self.number_of_lights) % 1
         self.position = local_progress
-        self.color = hls_to_rgb(local_progress, 0.7, 0.8)
+        self.color = hls_to_rgb(local_progress, 0.3, 0.8)

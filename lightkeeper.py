@@ -32,9 +32,9 @@ class LightKeeper:
 
     def set_rgb_values(self, position, rgb_tuple):
         offset = position * 3
-        self.rgb_array[offset + 1] += rgb_tuple[0]
-        self.rgb_array[offset + 2] += rgb_tuple[1]
-        self.rgb_array[offset + 3] += rgb_tuple[2]
+        self.rgb_array[offset + 0] += rgb_tuple[0]
+        self.rgb_array[offset + 1] += rgb_tuple[1]
+        self.rgb_array[offset + 2] += rgb_tuple[2]
 
     def set_buffer(self):
         self.transmitter.transmit(self.rgb_array)
